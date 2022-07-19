@@ -53,17 +53,19 @@ export const Board = ({ id, title, owner }) => {
       <div className="card-body">
         <h1 className="card-title">{title}</h1>
         <p className="card-subtitle">{owner}</p>
-        {cardData.map((data) => (
-          <Card
-            id={data.id}
-            message={data.message}
-            likes={data.likes}
-            onRemoveCallback={removeCard}
-          ></Card>
-        ))}
+        <div className="d-flex flex-row">
+          {cardData.map((data) => (
+            <Card
+              key={data.id}
+              id={data.id}
+              message={data.message}
+              likes={data.likes}
+              onRemoveCallback={removeCard}
+            ></Card>
+          ))}
+          <CreateCard addCardCallback={addCard}></CreateCard>
+        </div>
       </div>
-
-      <CreateCard addCardCallback={addCard}></CreateCard>
     </div>
   );
 };

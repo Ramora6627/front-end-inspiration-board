@@ -26,7 +26,7 @@ export const Card = ({ id, message, likes, onRemoveCallback }) => {
   };
 
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card m-2" style={{ width: "18rem" }}>
       <div className="card-body">
         <p className="card-text">{message}</p>
         <p>{like}</p>
